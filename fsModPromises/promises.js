@@ -59,14 +59,14 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-fs.promises
-  .writeFile(filePath, "Creating the file using fs Promises.", "utf-8")
-  .then(() => {
-    console.log("File Created Successfully!");
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// fs.promises
+//   .writeFile(filePath, "Creating the file using fs Promises.", "utf-8")
+//   .then(() => {
+//     console.log("File Created Successfully!");
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 
 // // // // Here, we are getting the Output on Terminal as :
@@ -94,3 +94,35 @@ fs.promises
 //////******************************************************************************************** */
 
 
+
+
+
+fs.promises
+  .readFile(filePath, "utf-8")
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log("Error reading file :",err);
+  });
+
+
+// // // // Here, we are getting the Output on Terminal as :-
+// // // // Creating the file using fs Promises.
+
+/**
+ *
+ * Read (read a file) :- readFile()
+ * The readFile() method reads data from a file.
+ * It can return the data as a Buffer or string based on the encoding provided.
+ *
+ *
+ * // ! syntax :- fs.promises.readFile(path, options).then(data => ...).catch(err => ...);
+ * // ? path : - Path to the file.
+ * // ? options :- Encoding ('utf8') or no encoding for binary data
+ *
+ */
+
+//////******************************************************************************************** */
+////------------------------------------------------------------------------------------------------
+//////******************************************************************************************** */
