@@ -97,14 +97,14 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-fs.promises
-  .readFile(filePath, "utf-8")
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log("Error reading file :",err);
-  });
+// fs.promises
+//   .readFile(filePath, "utf-8")
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log("Error reading file :",err);
+//   });
 
 
 // // // // Here, we are getting the Output on Terminal as :-
@@ -126,3 +126,43 @@ fs.promises
 //////******************************************************************************************** */
 ////------------------------------------------------------------------------------------------------
 //////******************************************************************************************** */
+
+
+
+
+fs.promises
+  .appendFile(
+    filePath,
+    "\nThis is the second line. By using the backward slash with n.",
+    "utf-8"
+  )
+  .then(() => {
+    console.log("File Updated Successfully!");
+  })
+  .catch((err) => {
+    console.log("Error updating file :", err);
+  });
+
+
+  // // // // Here, we are getting the Output on Terminal as :-
+  // // // // File Updated Successfully!
+  // // // // Therefore, we are able to see the new updated line on the file named as "fsPromises.txt".
+
+/**
+ *
+ * Update (append content to a file) :- appendFile()
+ * Adds content to the end of a file.
+ * The appendFile() method adds content without overwriting the existing data.
+ *
+ *
+ * // ! syntax :- fs.promises.appendFile(path, data, options).then().catch();
+ * // ? path :- Path to the file.
+ * // ? data :- Content to append.
+ * // ? options :- Encoding ('utf8') or no encoding for binary data.
+ *
+ */
+
+//////******************************************************************************************** */
+////------------------------------------------------------------------------------------------------
+//////******************************************************************************************** */
+

@@ -1,1 +1,2 @@
 Creating the file using fs Promises.
+This is the second line. By using the backward slash with n.
