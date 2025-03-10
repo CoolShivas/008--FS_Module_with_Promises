@@ -130,18 +130,18 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-fs.promises
-  .appendFile(
-    filePath,
-    "\nThis is the second line. By using the backward slash with n.",
-    "utf-8"
-  )
-  .then(() => {
-    console.log("File Updated Successfully!");
-  })
-  .catch((err) => {
-    console.log("Error updating file :", err);
-  });
+// fs.promises
+//   .appendFile(
+//     filePath,
+//     "\nThis is the second line. By using the backward slash with n.",
+//     "utf-8"
+//   )
+//   .then(() => {
+//     console.log("File Updated Successfully!");
+//   })
+//   .catch((err) => {
+//     console.log("Error updating file :", err);
+//   });
 
 
   // // // // Here, we are getting the Output on Terminal as :-
@@ -166,3 +166,39 @@ fs.promises
 ////------------------------------------------------------------------------------------------------
 //////******************************************************************************************** */
 
+
+
+
+
+fs.promises
+  .unlink(filePath)
+  .then(() => {
+    console.log("File Deleted Successfully!");
+  })
+  .catch((err) => {
+    console.log("Error deleting file :", err);
+  });
+
+
+  // // // // Here, we are getting the Output on Terminal as :-
+  // // // // File Deleted Successfully!
+  // // // // Therefore,  "fsPromises.txt" deleted now.
+
+
+/**
+ * 
+ * Delete (remove a file) : unlink()
+ * Delete a file from the filesystem.
+ * The unlink() method removes the specified file asynchronously.
+ * 
+ * 
+ * // ! syntax :- fs.promises.unlink(path).then().catch();
+ * // ? path :- Path to the file.
+ * 
+ * 
+ */
+
+
+//////******************************************************************************************** */
+////------------------------------------------------------------------------------------------------
+//////******************************************************************************************** */
